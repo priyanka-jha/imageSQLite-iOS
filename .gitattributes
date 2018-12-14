@@ -1,1 +1,3 @@
 static/* linguist-vendored
+* linguist-vendored
+*.swift linguist-vendored=false
