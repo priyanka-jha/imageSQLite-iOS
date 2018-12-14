@@ -2,8 +2,8 @@
 //  imageSQLite_iOSTests.swift
 //  imageSQLite-iOSTests
 //
-//  Created by Megavision Technologies on 13/12/18.
-//  Copyright © 2018 Megavision Technologies. All rights reserved.
+//  Created by Priyanka Jha on 13/12/18.
+//  Copyright © 2018 Priyanka Jha. All rights reserved.
 //
 
 import XCTest
