@@ -19,7 +19,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     var GetListData = NSMutableArray()
     var databasePath = String()
     var listid = "", imageid = 0
-    
+
    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
