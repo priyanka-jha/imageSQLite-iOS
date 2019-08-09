@@ -59,7 +59,43 @@ class ViewImage: UIViewController {
         
     }
     
-
+    @IBAction func deleteImage(_ sender: UIBarButtonItem) {
+        
+        let alert = UIAlertController(title: "Confirm Delete...", message: "Are you sure you want to delete this image?", preferredStyle: UIAlertController.Style.alert)
+        
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { action in
+            
+            let imageDB = FMDatabase(path: self.databasePath as String)
+            
+            if (imageDB.open()) {
+                let delSQL1 = "DELETE FROM image WHERE id= '\(self.imageid)' ;"
+                let result1 = imageDB.executeUpdate(delSQL1,withArgumentsIn: [])
+                print("image deleted")
+                
+                imageDB.close()
+                
+                let MainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let DV = MainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                
+                self.navigationController?.pushViewController(DV, animated: true)
+                
+            } else {
+                print("Error9: \(imageDB.lastErrorMessage())")
+            }
+            
+            
+        }
+        ))
+        
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     /*
     // MARK: - Navigation
 
